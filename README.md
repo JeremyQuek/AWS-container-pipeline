@@ -35,7 +35,7 @@ There are two main phases: execution and fetching
 
 <br>
 
-![Pipeline Architecture](./Image_1.png)
+![Pipeline Architecture](./README/Image_1.png)
 
 ## Rationale and Costs 
 The rationale behind this choice of architecture comes from a place of both efficacy and also efficiency. Here are several
@@ -57,8 +57,8 @@ Downsides:
 - Fargate charges per-vCPU hour and per GB hour pricing, making it the same price to run 1 task for 2 minutes vs 2 tasks for 1 minute. However, the start-up latency, which is around 6 minutes per task is also included, making parallel tasking more expensive
 <br>
 
-![Fargate CPU & Mem costs](./Image_2.png)
-![Fargate Storage costs](./Image_3.png)
+![Fargate CPU & Mem costs](./README/Image_2.png)
+![Fargate Storage costs](./README/Image_3.png)
 ## Steps to Re-create Pipeline
 
 ### Prerequisites 
