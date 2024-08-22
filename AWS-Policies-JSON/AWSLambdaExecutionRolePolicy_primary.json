@@ -1,0 +1,37 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": "logs:CreateLogGroup",
+			"Resource": "arn:aws:logs:ap-southeast-1:010928205910:*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:CreateLogStream",
+				"logs:PutLogEvents"
+			],
+			"Resource": [
+				"arn:aws:logs:ap-southeast-1:010928205910:log-group:/aws/lambda/secondary_function:*"
+			]
+		},
+		{
+			"Sid": "Statement1",
+			"Effect": "Allow",
+			"Action": [
+				"ecs:RunTask",
+				"s3:ListBucket",
+				"s3:PutObject",
+				"iam:PassRole"
+			],
+			"Resource": [
+				"arn:aws:ecs:ap-southeast-1:010928205910:task-definition/container-model-path:*",
+				"arn:aws:ecs:ap-southeast-1:010928205910:task/evaluationcluster/*",
+				"arn:aws:s3:::bobmodels/*",
+				"arn:aws:iam::010928205910:role/ecsTaskExecutionRole",
+				"arn:aws:iam::010928205910:role/ecstaskrole"
+			]
+		}
+	]
+}

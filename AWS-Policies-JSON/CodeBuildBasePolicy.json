@@ -1,0 +1,79 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "VisualEditor0",
+			"Effect": "Allow",
+			"Action": [
+				"codebuild:CreateReportGroup",
+				"codebuild:CreateReport",
+				"codebuild:UpdateReport",
+				"codebuild:BatchPutCodeCoverages",
+				"codebuild:BatchPutTestCases"
+			],
+			"Resource": "arn:aws:codebuild:ap-southeast-1:010928205910:report-group/evalbuild-*"
+		},
+		{
+			"Sid": "VisualEditor1",
+			"Effect": "Allow",
+			"Action": [
+				"ecr:DescribeRepositoryCreationTemplates",
+				"ecr:UpdateRepositoryCreationTemplate",
+				"ecr:BatchDeleteImage",
+				"ecr:BatchGetRepositoryScanningConfiguration",
+				"ecr:DeleteRepository",
+				"logs:CreateLogStream",
+				"ecr:TagResource",
+				"ecr:BatchCheckLayerAvailability",
+				"ecr:GetLifecyclePolicy",
+				"ecr:DescribeImageScanFindings",
+				"ecr:CreateRepository",
+				"ecr:PutImageScanningConfiguration",
+				"ecr:GetDownloadUrlForLayer",
+				"ecr:DescribePullThroughCacheRules",
+				"ecr:GetAuthorizationToken",
+				"ecr:DeleteLifecyclePolicy",
+				"logs:CreateLogGroup",
+				"ecr:PutImage",
+				"ecr:ValidatePullThroughCacheRule",
+				"ecr:CreateRepositoryCreationTemplate",
+				"ecr:UntagResource",
+				"ecr:BatchGetImage",
+				"ecr:DescribeImages",
+				"ecr:StartLifecyclePolicyPreview",
+				"ecr:UpdatePullThroughCacheRule",
+				"ecr:InitiateLayerUpload",
+				"ecr:PutImageTagMutability",
+				"ecr:StartImageScan",
+				"ecr:DescribeImageReplicationStatus",
+				"ecr:ListTagsForResource",
+				"ecr:UploadLayerPart",
+				"ecr:CreatePullThroughCacheRule",
+				"ecr:ListImages",
+				"ecr:GetRegistryScanningConfiguration",
+				"ecr:CompleteLayerUpload",
+				"ecr:DescribeRepositories",
+				"ecr:ReplicateImage",
+				"ecr:GetRegistryPolicy",
+				"ecr:PutLifecyclePolicy",
+				"ecr:GetLifecyclePolicyPreview",
+				"ecr:DescribeRegistry",
+				"codecommit:GitPull",
+				"ecr:PutRegistryScanningConfiguration",
+				"ecr:DeletePullThroughCacheRule",
+				"logs:PutLogEvents",
+				"ecr:BatchImportUpstreamImage",
+				"ecr:DeleteRepositoryCreationTemplate",
+				"ecr:GetRepositoryPolicy",
+				"ecr:PutReplicationConfiguration",
+                "s3:ListBucket",
+				"s3:GetObject"
+			],
+            "Resource": [
+				"arn:aws:codecommit:ap-southeast-1:{Account}:evaluation-repo",
+                "arn:aws:ecr:ap-southeast-1:{Account}:repository/evaluation-repo",
+				"arn:aws:s3:::bobmodels/*"
+			]
+		}
+	]
+}
